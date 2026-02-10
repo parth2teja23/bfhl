@@ -67,11 +67,9 @@ app.post("/bfhl", async (req, res) => {
 
       case "lcm":
         if (!Array.isArray(value)) throw new Error("Integer array required");
-        // Edge case: Handle empty array to prevent server crash
         if (value.length === 0) {
-          resultData = 0; // Or handle as an error based on your preference
+          resultData = 0; 
         } else {
-          // Provide an initial value or ensure the array isn't empty
           resultData = value.reduce((acc, curr) =>
             getLCM(Number(acc), Number(curr)),
           );
@@ -80,7 +78,6 @@ app.post("/bfhl", async (req, res) => {
 
       case "hcf":
         if (!Array.isArray(value)) throw new Error("Integer array required");
-        // Edge case: Handle empty array to prevent server crash
         if (value.length === 0) {
           resultData = 0;
         } else {
